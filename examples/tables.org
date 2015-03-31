@@ -1,0 +1,27 @@
+* Simple table
+
+| a | b | c | d |
+| e | f | g | h |
+| i | j | k | l |
+| m | n | o | p |
+
+
+* Convert region
+
+** Coma
+
+a, b, c
+d, e, f
+g, h, i
+
+** Tab
+
+a	b	c
+d	e	f
+g	h	i
+
+** Space
+
+a b c
+d e f
+g h i

@@ -1,0 +1,977 @@
+#+TITLE: Emacs and Org mode
+#+AUTHOR: Marcin Mela
+#+EMAIL: marcin.mela@gmail.com
+#+LANGUAGE: en
+#+OPTIONS: H:5 toc:nil
+#+SETUPFILE: ./templates/bigblow-remote.setup
+#+OPTIONS: h:5
+
+#+ODT_STYLES_FILE: ("templates/template.odt" ("styles.xml" "Pictures/1000020100000640000001EC991BB641.png"))
+
+#+ODT: <text:p text:style-name="PageBreak"/>
+
+#+TOC: headlines 5
+
+#+ODT: <text:p text:style-name="PageBreak"/>
+
+
+* Introduction
+** About this presentaion
+
+- Why I want to talk about Emacs and Org mode?
+
+** Editor war
+
+/Editor war is the common name for the rivalry between users of the Emacs and Vi (Vim) text editors. The rivalry has become a lasting part of hacker culture and the free software community./
+
+http://en.wikipedia.org/wiki/Editor_war
+
+"The Church of Emacs", "Cult of vi", "alt.religion.emacs"
+
+*Emacs* is a +text editor+ way of life
+
+* Emacs
+** Few words about Emacs
+- First version of Emacs was created in mid 70s by Richard
+  Stallman. It was called TECO
+- In 1984 Richard Stallman started work on GNU Emacs - the first GNU
+  project
+- Emacs consists of small kernel written in C, Lisp interpreter and a
+  lot of Emacs Lisp code
+- Emacs has a lot of forks, however two of them: GNU Emacs and Xemacs
+  are the most important ones
+
+** Why Emacs?
+
+- *Org mode*
+- free
+- works everywhere
+- supports nearly everything
+- powerful
+- highly configurable
+- doesn't require using mouse
+
+** Keys Notation
+- =M-= ::  means the Meta key (the Alt key, on most keyboards)
+- =C-= ::  means (press and hold) the Control key
+- =S-= ::  means the Shift key (e.g. ‘S-TAB’ means Shift Tab)
+- =DEL=, =<DEL>= ::  means the Backspace key (not the Delete key)
+- =RET=, =<RET>= ::  means the Return or Enter key
+- =SPC=, =<SPC>= ::  means the Space bar
+- =ESC=, =<ESC>= ::  means the Escape key
+- =TAB=, =<TAB>= ::  means the Tab key
+
+Examples:
+- =M-%= :: hold Alt and Shift keys then press '5' key
+- =C-x C-f= :: hold Control key press 'x' key, then hold Control key
+               and press 'f' key
+
+** Key bindings
+
+- Emacs :: original key bindings, specific to Emacs
+- CUA :: allows to use =C-v=, =C-c=, and =C-x= for regions, adds
+          =C-z= for undo and simplifies rectangles =C-RET=
+- ErgoEmacs :: most of shortcuts were remapped to be mimic shortcuts
+               in other editors
+
+| *Common Name* | *Common Key* | *Emacs Name*   | *Emacs Key* |
+|---------------+--------------+----------------+-------------|
+| Cut           | =C-x=        | Kill           | =C-w=       |
+| Copy          | =C-c=        | Kill-ring-save | =M-w=       |
+| Paste         | =C-v=        | Yank           | =C-y=       |
+| —             | —            | Yank next      | =M-y=       |
+
+*Note*: Some of CUA bindings conflict with number of standard Emacs
+key-bindings, so they are active only if the mark is active. It is
+possible to override that behaviour by replacing =C= with =C-S=; for
+instance: when the region is active, combination =C-S-x= activates
+standard =C-x= instead of cutting the region.
+
+** Help system in Emacs
+- =M-x apropos= :: show all meaningful Lisp symbols matching given pattern
+- =M-x apropos-command= :: show all commands matching given pattern
+- =C-h ?= :: help summary
+- =C-h w= :: display keystrokes invoking given command
+- =C-h f= :: display function description
+- =C-h F= :: display command manual
+- =C-h i= :: display Emacs manual
+- =C-h m= :: display information about current modes
+- =C-h c= :: show command bounded to a given key
+
+** Frame, windows & buffers
+
+#+CAPTION: Emacs UI components 
+#+ATTR_HTML: :align center :width 100%
+[[./images/frame-window-buffer.png]]
+
+** Basic shortcuts
+
+- =C-x C-f= :: open new or existing file
+- =C-x C-s= :: save buffer
+- =C-x C-w= :: save buffer as a different file
+- =C-x s= :: save all open buffers
+- =C-s i= :: insert a file into buffer
+- =C-x k= :: close a buffer
+- =C-x b= :: switch to another buffer
+- =M-<= :: go to the beginning of the buffer
+- =M->= :: go to the end of the buffer
+- =C-g= :: cancel current operation
+- =C-S-DEL= :: delete entire line
+- =C-SPC= :: set mark
+- =C-x h= :: select entire buffer
+- =M-u= :: make word uppercase
+- =M-i= :: make work downcase
+
+Not so useful keybindings:
+- =C-x C-c= :: quit Emacs
+
+** Windows management
+
+- =C-x 0= :: delete the current window
+- =C-x 1= :: maximize the current window
+- =C-x 2= :: split the current window horizontally
+- =C-x 3= :: split the current window vertically
+- =C-x o= :: switch to other window
+- =C-x ^=, =M-x shrink-window= :: change vertical size
+- =C-x }=, =C-x {= :: change horizontal size
+- =C-x -= :: shrink window if larger than buffer
+
+** Regions & rectangles
+
+The text between point and mark is called *region*. The active region
+is essentially what some other programs call the "selection".  The
+cursor (not the mouse pointer) defines the position of point, which is
+one end of the region. The other end is the mark. The mark is
+invisible; the point is indicated by the cursor.
+
+Point can be set by clicking =mouse-1= or using the arrow keys. Mark
+can by set by
+- =C-SPC= or =C-@=
+- dragging the point with =mouse-1= (point’s old value becomes the
+  mark)
+- clicking =mouse-3= (clicked position becomes point; point’s old
+  value becomes the mark)
+
+The *rectangle* commands operate on rectangular areas of the text: all
+the characters between a certain pair of columns, in a certain range
+of lines. Cua mode allows to start creating rectangle by =C-RET= .
+
+Useful commands
+- =M-r= :: replace text in rectangle
+- =C-x r N= (CUA =C-S-x r N=) :: Insert line numbers along the left
+     edge of the region-rectangle
+- =C-x r c= (CUA =C-x r c=) :: Clear the rectangle by replacing all
+     of its contents with spaces
+
+** Search 
+- =C-s= :: incremental search, press =C-s= to go to the next occurence
+- =C-M-s= :: incremental regexp search
+- =C-r= :: incremental backward search
+- =C-M-r= :: incremental backward regex search
+
+Commands available during search
+- =M-c= :: switch between case sensitive/insensitive search
+- =C-s= :: search again forward
+- =C-r= :: search again backward
+
+** Replace
+
+- =M-%= :: replace some occurences of sting with new string
+- =C-M-%=  :: replace some matches for regexp with newstring
+
+After executing the above command all matching places will be shown,
+so user can decide about each replacement
+
+- =<SPC>= :: replace the occurrence with newstring.
+- =<DEL>= :: skip to the next occurrence without replacing this one. 
+- =<RET>= :: exit without doing any more replacements. 
+- =!= :: replace all remaining occurrences without asking again. 
+- =?= :: display help
+
+** Regular expressions
+
+Syntax used by Emacs for regular expressions:
+
+#+BEGIN_EXAMPLE
+  .        any character (but newline)
+  *        previous character or group, repeated 0 or more time
+  +        previous character or group, repeated 1 or more time
+  ?        previous character or group, repeated 0 or 1 time  
+  ^        start of line
+  $        end of line
+  [...]    any character between brackets
+  [^..]    any character not in the brackets
+  [a-z]    any character between a and z
+  \        prevents interpretation of following special char
+  \|       or
+  \w       word constituent
+  \b       word boundary
+  \sc      character with c syntax (e.g. \s- for whitespace char)
+  \( \)    start\end of group
+  \< \>    start\end of word
+  \_< \_>  start\end of symbol
+  \` \'    start\end of buffer\string
+  \1       string matched by the first group
+  \n       string matched by the nth group
+  \{3\}    previous character or group, repeated 3 times
+  \{3,\}   previous character or group, repeated 3 or more times
+  \{3,6\}  previous character or group, repeated 3 to 6 times
+  \=       match succeeds if it is located at point
+
+  \ca      ascii character
+  \Ca      non-ascii character (newline included)
+  \cl      latin character
+  \cg      greek character
+
+  [:digit:]  a digit, same as [0-9]
+  [:alpha:]  a letter (an alphabetic character)
+  [:alnum:]  a letter or adigit (an alphanumeric character ()
+  [:upper:]  a letter in uppercase
+  [:space:]  a whitespace character, as defined by the syntax table
+  [:xdigit:] an hexadecimal digit
+  [:cntrl:]  a control character
+  [:ascii:]  an ascii character
+
+  \s-   whitespace character      
+  \sw   word constituent          
+  \s_   symbol constituent        
+  \s.   punctuation character     
+  \s(   open delimiter character  
+  \s)   close delimiter character 
+  \s"   string quote character    
+  \s\   escape character  
+  \s/   character quote character  
+  \s$   paired delimiter           
+  \s'   expression prefix          
+  \s<   comment starter            
+  \s>   comment ender              
+  \s!   generic comment delimiter  
+  \s|   generic string delimiter   
+#+END_EXAMPLE
+
+=*?=, =+?=, and =??= are non-greedy versions of =*=, =+=, and =?= Also, =\W=, =\B=, and =\Sc= match any character that does not match =\w=, =\b=, and =\sc=.
+
+** Regexp examples
+
+#+BEGIN_EXAMPLE
+  [-+[:digit:]]                     digit or + or - sign
+  \(\+\|-\)?[0-9]+\(\.[0-9]+\)?     decimal number (-2 or 1.5 but not .2 or 1.)
+  \(\w+\) +\1\>                     two consecutive, identical words
+  \<[[:upper:]]\w*                  word starting with an uppercase letter
+   +$                               trailing whitespaces (note the starting SPC)
+  \w\{20,\}                         word with 20 letters or more
+  \w+phony\>                        word ending by phony
+  \(19\|20\)[0-9]\{2\}              year 1900-2099
+  ^.\{6,\}                          at least 6 symbols
+  ^[a-zA-Z0-9_]\{3,16\}$            decent string for a user name
+  <tag[^> C-q C-j ]*>\(.*?\)</tag>  html tag
+#+END_EXAMPLE
+
+** Regexp based commands
+
+- =C-M-s= :: incremental forward search matching regexp
+- =C-M-r= :: incremental backward search matching regexp 
+- =replace-regexp= :: replace string matching regexp
+- =query-replace-regexp= :: same, but query before each replacement
+- =align-regexp= :: align, using strings matching regexp as delimiters
+- =highlight-regexp= :: highlight strings matching regexp
+- =occur= :: show lines containing a match
+- =multi-occur= :: show lines in all buffers containing a match
+- =how-many= :: count the number of strings matching regexp
+- =keep-lines= :: delete all lines except those containing matches
+- =flush-lines= :: delete lines containing matches
+- =grep= :: call unix grep command and put result in a buffer
+- =lgrep= :: user-friendly interface to the grep command
+- =rgrep= :: recursive grep
+- =re-builder= :: constructs a regular expression
+- =rx= :: user friendly syntax for regular expressions
+
+** Spell checking
+
+- =M-x flyspell-mode= :: enable flyspell-mode which highlights all misspelled words
+- =M-x flyspell-prog-mode= :: flyspell for comments and strings only
+- =M-x flyspell-buffer= :: flyspell for current buffer
+- =M-x flyspell-region= :: flyspell for region
+- =M-x ispell-change-dictionary= :: change dictionary and language
+- =M-<TAB>=, =<ESC> <TAB>= :: complete word
+- =C-c $=, =M-x flyspell-correct word-before-point= :: display a popup with correct word suggestions
+
+** Narrowing
+
+Narrowing the buffer means restricting from accessing anything but a
+certain part of the current buffer. The rest of the buffer is
+invisible, unreachable and uneditable.
+
+- =C-x n n= :: narrow to region
+- =C-x n s= :: narrow buffer to current subtree
+- =C-x n b= :: narrow buffer to current block
+- =C-x n w= :: widen
+
+** Dynamic Abbreviations
+
+- =M-/= - expand expression
+
+- repeat: =M-/= - find the right expression
+
+- repeat: =M-/ space M-/= - continue expression
+
+Example: 
+
+#+BEGIN_SRC java
+  public class ExmapleClass {
+   private int veryLongNameVariableInt;
+   private String veryLongNameString;
+  
+   public boolean m() {
+     return veryLongNameString.equals(Integer.toString(veryLongNameVariableInt));
+   }
+  }
+#+End_SRC
+
+** Paragraph filling
+
+- =M-q= - fill the current paragraph
+- =M-x set-fill-column= - change column used as a right margin
+- =M-x auto-fill-mode= - fill paragraphs automatically
+
+[[file:examples/transpose.org::*Heading%202][Example]]
+
+* Org mode
+** Visibility cycling
+
+- =<TAB>= :: subtree cycling, rotate current subtree among the states
+
+#+BEGIN_EXAMPLE
+  ,-> FOLDED -> CHILDREN -> SUBTREE --.
+  '-----------------------------------'
+#+END_EXAMPLE
+
+- =S-<TAB>= ::  global cycling, rotate the entire buffer among the states
+
+#+BEGIN_EXAMPLE
+  ,-> OVERVIEW -> CONTENTS -> SHOW ALL --.
+  '--------------------------------------'
+#+END_EXAMPLE
+** Movement
+
+- =C-c C-n= :: next heading
+- =C-c C-p= :: previous heading
+- =C-c C-f= :: next heading same level
+- =C-c C-b= :: previous heading same level
+- =C-c C-u= :: backward to higher level heading
+- =C-c C-j= :: browse buffer copy, to find location or copy text
+- =C-c /​= :: sparse tree
+
+** Structure editing
+
+- =M-<RET>= :: Insert a new heading/item with the same level than the
+               one at point. If the cursor is in a plain list item, a
+               new item is created
+- =C-<RET>= :: Just like M-<RET>, except when adding a new heading
+               below the current heading, the new heading is placed
+               after the body instead of before it. This command works
+               from anywhere in the entry
+- =M-S-<RET>= :: Insert new TODO entry with same level as current
+                 heading. See also the variable
+                 org-treat-insert-todo-heading-as-state-change.
+- =C-S-<RET>= :: Insert new TODO entry with same level as current
+                 heading. Like C-<RET>, the new headline will be
+                 inserted after the current subtree
+- =<TAB>= :: In a new entry with no text yet, the first <TAB> demotes
+             the entry to become a child of the previous one. The next
+             <TAB> makes it a parent, and so on, all the way to top
+             level. Yet another <TAB>, and you are back to the initial
+             level
+- =M-<left>= :: Promote current heading by one level
+- =M-<right>= ::  Demote current heading by one level
+- =M-S-<left>= :: Promote the current subtree by one level
+- =M-S-<right>= :: Demote the current subtree by one level
+- =M-S-<up>= ::  Move subtree up (swap with previous subtree of same
+                 level)
+- =M-S-<down>= :: Move subtree down (swap with next subtree of same
+                  level)
+
+** Plain lists - unordered
+
+#+BEGIN_EXAMPLE
+- a1
+- b1
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+- a2
+- b2
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+  * a3
+  * b3
+#+END_EXAMPLE
+
+** Plain lists - ordered
+
+#+BEGIN_EXAMPLE
+1. a1
+2. b1
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+1) a1
+2) b1
+#+END_EXAMPLE
+
+** Plain lists - alphabetical order
+
+It's  possible to use letters as bullets but it requires configuring =org-list-allow-alphabetical=
+
+#+BEGIN_EXAMPLE
+a) a2
+b) b2
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+A) a2
+B) b2
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+a. a2
+b. b2
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+A. a2
+B. b2
+#+END_EXAMPLE
+
+** Plain lists - description lists
+
+- Lorem :: Aliquam erat volutpat
+- Ipsum :: Nunc eleifend leo vitae magna.
+- Donec :: In id erat non orci commodo lobortis.
+- Vivamus :: Praesent fermentum tempor tellus.
+
+** Plain lists - commands
+
+- =M-<RET>= :: insert new item at current level
+- =S-up=, =S-down= :: jump to the previous/next item in the current list
+- =M-up=, =M-down= :: move the item (including subitems up/down)
+- =M-left=, =M-right= :: decrease/increase the indentation of an item, leaving children alone
+- =M-S-left=, =M-S-right= ::  decrease/increase the indentation of the item, including subitems
+- =S-left=, =S-right= :: cycle bullet styles
+- =C-c ^= :: sort the plain list
+
+** Checkboxes
+
+- [X] Lorem ipsum  
+- [-] Lorem lorem [1/4]
+  - [-] Lo
+  - [ ] rem
+  - [X] ips
+  - [ ] um
+- [X] Ipsum lorem [100%]
+  - [X] Ips
+  - [X] Um
+- [ ]  Ipsum ipsum
+
+** Ordered checkoboxes
+   :PROPERTIES:
+   :ORDERED:  t
+   :END:
+
+- [ ] Lorem ipsum  
+- [ ] Lorem lorem [0/4]
+  - [ ] Lo
+  - [ ] rem
+  - [ ] ips
+  - [ ] um
+- [ ] Ipsum lorem [0%]
+  - [ ] Ips
+  - [ ] Um
+- [ ]  Ipsum ipsum
+
+** Statistics cookies
+
+- =[/​]= :: n out of m
+
+- =[%​]= :: percentage of checkboxes checked
+
+** Checkboxes - commands
+
+- =M-S-<RET>= :: insert a new item with a checkbox
+- =C-c C-c= :: toggle checkbox status 
+- =C-c #= :: update statistics cookies
+- =C-c C-x o= :: toggle the ORDERED property of the entry
+
+** Nested lists
+   
+My favorite scenes are (in this order)
+1. The attack of the Rohirrim
+2. Eowyn's fight with the witch king
+   + this was already my favorite scene in the book
+   + I really like Miranda Otto.
+3. Peter Jackson being shot by Legolas
+   - on DVD only
+   He makes a really funny face when it happens.
+But in the end, no individual scenes matter but the film as a whole.
+Important actors in this film are:
+- Elijah Wood :: He plays Frodo
+- Sean Austin :: He plays Sam, Frodo's friend.  I still remember
+  him very well from his role as Mikey Walsh in The Goonies.
+
+/taken from the Org mode manual/
+** Transpose
+
+- =M-up=, =M-down= :: transpose headings, paragraphs, list elements, table rows
+
+[[file:examples/transpose.org::*Heading%201][Transpose example]]
+
+** Emphasis and monospace
+   
+- =*bold*= - *bold*
+- =/italic/= - /italic/
+- =_underlined_= - _underlined_
+- =\=verbatim\== - =verbatim=
+- =~code~= - ~code~ 
+- =+strike-through+= - +strike-through+
+
+#+BEGIN_SRC org
+  Nullam *eu ante vel est convallis* dignissim.  /Fusce suscipit, wisi
+  nec facilisis/ facilisis, est dui fermentum leo, _quis tempor ligula
+  erat_ quis odio.  Nunc porta =vulputate tellus=.  Nunc ~rutrum turpis
+  sed~ pede.  Sed bibendum. + Aliquam posuere+.
+#+END_SRC
+
+** Tables - create
+
+- =C-c |=, (CUA =S-C-c |=) :: converts the active region to table. If
+     there is no active region it creates an empty Org table. Elements
+     can be separated using commas, tab or whitespace characters
+
+[[file:examples/tables.org::*Convert%20region][Example - convert region]]
+
+- =|= (anything) =<TAB>= :: create table
+
+** Tables
+
+Realign and field motion
+- =C-c C-c=,  :: re-align the table and don't move
+- =<TAB>= :: re-align and move to the next field
+- =S-<TAB>= :: re-align the table and move to the previous field
+- =<RET>= :: re-align the table and move to the next row
+  
+Column and row edition
+- =M-<left>=, =M-<right>= :: move the current column left/right
+- =M-S-<left>= :: kill the current column
+- =M-S-<right>= :: insert a new column to the left of the cursor position
+- =M-<up>=, =M-<down>= :: move the current row up/down
+- =M-S-<up>= :: kill the current row or horizontal line
+- =M-S-<down>= :: insert a new row above the current row
+- =C-c -= :: insert a horizontal line below current row. 
+- =C-c <RET>= :: insert a horizontal line below current row, and move the cursor into the row below that line
+- =C-c ^= :: sort the table lines in the region  
+
+[[file:examples/tables.org::*Simple%20table][Example - simple table]]
+
+** Tables - calculations
+
+- =C-c += :: sum the number in the current column or rectangle defined
+             by the active region. The result is shown in the echo
+             area and can be inserted with =C-y= (=C-v=)
+
+- =S-<RET>= :: When current field is empty, copy from first non-empty
+               field above. When not empty, copy current field down to
+               next row and move cursor along with it. Depending on
+               the option org-table-copy-increment, integer field
+               values will be incremented during copy.
+
+[[file:examples/tables.org::*Calculations][Example - calculations]]
+
+** Tables - column width and alignment
+
+Example: 
+
+|              | <15>            |             |
+| <c>          | <l>             |         <r> |
+| Lorem ipsumm | Lorem Lorem Lorem Lorem Lorem | Ipsum ipsum |
+|--------------+-----------------+-------------|
+| a            | b               |           v |
+|              | Aliquam erat volutpat. |             |
+
+- =C-`= :: edit clipped text
+
+** Spreadsheet
+
+| Student  | Maths | Physics |      Mean |
+|----------+-------+---------+-----------|
+| Bertrand |     4 |       3 |       3.5 |
+| Henri    |     6 |      10 |         8 |
+| Arnold   |     2 |       5 |       3.5 |
+|----------+-------+---------+-----------|
+| Means    |     4 |       6 | 4.8333334 |
+#+TBLFM: $4=vmean($2..$3)::@5$2=vmean(@2$2..@4$2)::@5$3=vmean(@2$3..@4$3)
+
+- =C-c ?= :: display field reference
+- =C-c }= :: disaply reference grid
+- =C-c C-c= :: recalculate formula
+- =C-c == :: edit column formula
+- =C-u C-c == :: edit field formula
+
+** Table.el
+
+  +---+-------------+--------+----+
+  | A |      B      |   C    |  D |
+  +---+-------------+--------+----+
+  | 1 |      2      |     3 4     |
+  +---+-------------+--------+----+
+  | 5 |      6      |   7    |  8 |
+  +---+-------------+--------+----+
+  | 9 |        10 11         | 12 |
+  +---+-------------+--------+----+
+  | x |      y      |   z    |  . |
+  +---+-------------+--------+----+
+
+Org mode supports tables provided by the =table.el= package. It's possible to convert 
+a regular table to a =table.el= version.
+
+- =C-c '​= :: edit a =table.el= table
+- =C-c ~​= :: insert a =table.el= table
+  
+** To-do lists
+
+Keywords (TODO, DONE, POSTPONED)
+- =S-left= :: previous keyword
+- =S-right= :: next keyword
+
+Priorities
+- =S-up= ::  priority up
+- =S-down= :: priorioty down
+
+
+#+BEGIN_EXAMPLE
+  * TODO Nullam rutrum.
+  * DONE Phasellus purus.
+  * POSTPONED Fusce commodo.
+  * TODO [#A] Proin neque massa, cursus ut, gravida ut, lobortis eget, lacus.
+  * TODO [#B] Donec neque quam, dignissim in, mollis nec, sagittis eu, wisi.
+#+END_EXAMPLE
+
+** Time tracking
+
+- =C-c C-x C-i= :: start the clock on the current item (clock-in) 
+
+- =C-c C-x C-o= :: stop the clock (clock-out). This inserts another
+                   timestamp at the same location where the clock was
+                   last started. It also directly computes the
+                   resulting time in inserts it after the time range
+                   as ‘=> HH:MM’
+
+- =C-c C-c= or =C-c C-y= :: recompute the time interval after changing
+     one of the timestamps. This is only necessary if you edit the
+     timestamps directly. If you change them with S-<cursor> keys, the
+     update is automatic
+
+- =C-c C-x C-q=  :: cancel the current clock. This is useful if a
+                    clock was started by mistake, or if you ended up
+                    working on something else
+
+- =C-c C-x C-j= ::  jump to the headline of the currently clocked in task
+
+- =C-c C-x C-d= :: display time summaries for each subtree in the
+                   current buffer
+
+- =C-c C-x C-r= :: insert a dynamic block (see Dynamic blocks)
+                   containing a clock report as an Org mode table into
+                   the current file. When the cursor is at an existing
+                   clock table, just update it
+
+- =C-c C-c= or =C-c C-x C-u= :: update dynamic block at point. The
+     cursor needs to be in the #+BEGIN line of the dynamic block.
+
+[[file:examples/time-tracking.org::2015-03-30][Time tracking example]]
+
+** Agendas
+
+- =C-c a= :: Activate agenda (should be bound to a global key before)
+
+- =C-c C-s= :: Add schedule to the current item
+
+- =C-c C-d= :: Add deadline to the current item
+
+- =C-c [= :: Add current file to the list of agenda files. The file is
+             added to the front of the list
+- =C-c ]= :: Remove current file from the list of agenda files
+
+[[file:examples/agenda.org::*Project%20A][Example]]
+
+** Links
+
+- =C-c l= :: store link
+- =C-c C-l= :: create link
+- =C-c C-l= :: (when cursor points link) - edit linkk
+- =C-c C-o= :: open link
+
+** Footnotes
+
+- =C-c C-x f= :: The footnote action command. When the cursor is on a
+  footnote reference, jump to the definition. When it is at a
+  definition, jump to the (first) reference. Otherwise, create a new
+  footnote.
+
+[[file:examples/footnotes.org][Footnotes example]]
+
+** Tags
+
+Every headline can contain a list of tags; they occur at the end of
+the headline. Tags are normal words containing letters, numbers, ‘_’,
+and ‘@’. Tags must be preceded and followed by a single colon, e.g.,
+~:work:~. Several tags can be specified, as in ~:work:urgent:~
+
+Tags make use of the hierarchical structure of outline trees. If a
+heading has a certain tag, all subheadings will inherit the tag as
+well. For example, in the list:
+
+#+BEGIN_EXAMPLE
+ * Meeting with the French group      :work:
+ ** Summary by Frank                  :boss:notes:
+ *** TODO Prepare slides for him      :action:
+#+END_EXAMPLE
+
+The final heading will have the tags ~:work:~, ~:boss:~, ~:notes:~, and
+~:action:~ even though the final heading is not explicitly marked with
+those tags.
+
+- =C-c C-c= :: add tag
+
+- =C-c C-c=, =C-c C-q= :: create or edit tags
+
+** Exporting to other formats
+
+- =C-c C-e= :: dispatch for export and publishing commands. When
+               called with a =C-u= prefix argument, repeat the last
+               export command on the current buffer while preserving
+               toggled options. If the current buffer hasn't changed
+               and subtree export was activated, the command will
+               affect that same subtree. Normally the entire buffer is
+               exported, but if there is an active region only that
+               part of the buffer will be exported.
+
+** Export backends
+
+An export back-end is a library that translates Org syntax into a
+foreign format. An export format is not available until the proper
+back-end has been loaded.Built-in back-ends include:
+
+- ascii (ASCII format)
+- beamer (LaTeX Beamer format)
+- html (HTML format)
+- icalendar (iCalendar format)
+- latex (LaTeX format)
+- man (Man page format)
+- md (Markdown format)
+- odt (OpenDocument Text format)
+- org (Org format)
+- texinfo (Texinfo format) 
+
+Other back-ends might be found in the contrib/ directory.
+
+* Advanced Emacs
+** Easy templates
+
+Org mode supports insertion of empty structural elements (like
+=#+BEGIN_SRC= and =#+END_SRC= pairs) with just a few key strokes. This
+is achieved through a native template expansion mechanism.
+
+To insert a structural element, type a =<=, followed by a template
+selector and =<TAB>=. Completion takes effect only when the above
+keystrokes are typed on a line by itself.
+
+- =s= -	=#+BEGIN_SRC ... #+END_SRC=
+- =e= -	=#+BEGIN_EXAMPLE ... #+END_EXAMPLE=
+- =q= -	=#+BEGIN_QUOTE ... #+END_QUOTE=
+- =v= -	=#+BEGIN_VERSE ... #+END_VERSE=
+- =c= -	=#+BEGIN_CENTER ... #+END_CENTER=
+- =l= -	=#+BEGIN_LaTeX ... #+END_LaTeX=
+- =L= -	=#+LaTeX:=
+- =h= -	=#+BEGIN_HTML ... #+END_HTML=
+- =H= -	=#+HTML:=
+- =a= -	=#+BEGIN_ASCII ... #+END_ASCII=
+- =A= -	=#+ASCII:=
+- =i= -	=#+INDEX: line=
+- =I= -	=#+INCLUDE: line=
+
+You can install additional templates by customizing the variable
+=org-structure-template-alist=.
+
+** Support for diff's
+
+- =M-x diff= :: asks for two files and displays results of =diff=
+                command in a buffer
+
+- =M-x ediff= :: allows to browse, compare and edit a pair (or a
+                 triple) of files or buffers
+  - =M-x ediff-buffers=
+  - =M-x ediff3=
+  - =M-x ediff-buffers3=
+
+[[file:examples/MyClass1.java][MyClass1.java]]
+[[file:examples/MyClass2.java][MyClass2.java]]
+
+** Dired
+
+Dired is kind file manager built in Emacs. It shows a directory
+listing, allows to edit it, perform various operation on files,
+subdirectoried etc. It can by started using  =M-x dired= or =C-x d=.
+
+Basic Dired commands:
+- =<RET>= :: open the file and switch the buffer
+- =o= :: open file in another window and go there
+- =C-o= :: open file in another window, but don't select that window
+- =q= :: close the dir
+- =C= :: copy file
+- =R= :: rename/move file
+- =D= :: delete file
+- =+= :: create a new dir
+- =Z= :: compress/decompress the file by gzip
+- =m= :: mark file
+- =u= :: unmark file
+- =U= :: unmark all
+- =g= :: refresh directory lising
+
+** Terminal
+
+- =M-x shell= :: inferior shell
+- =M-x term= :: terminal emulator
+- =M-x eshell= :: Emacs shell
+- =M-x ansi-term= :: terminal emulator (full ANSI support)
+
+"If you’re looking for a faithful emulator, then =ansi-term= is the
+choice for you; if you are more interested in a dumb terminal that
+behaves like an Emacs buffer then use =shell=; if you want something
+fancier that you can tweak and customize like Emacs itself, =eshell= may
+be the right shell for you." (http://www.masteringemacs.org)
+
+** Executing external commands
+
+- =M-! some-external-command= :: execute an external command. The
+  output from the command will be shown in the minibuffer or separate buffer
+
+-  =C-u M-! some-external-command= :: execute internal command, and
+     insert results into current buffer
+
+- =M-| some-external-command= :: send region as input to external
+     command
+
+- =C-u M-| some-external-command= :: send region as input to external
+     command and replace the region with results
+
+** Tramp Mode
+
+*TRAMP* - Transparent Remote Access, Multiple Protocols - is a package
+for accesing and editing remote files. It allows you transparent
+access to files on remote access. “Transparent” means that usually the
+user doesn’t have to worry about anything. All that changes is the
+filename convention to indicate that the file resides on a remote
+system.
+
+#+BEGIN_EXAMPLE
+ C-x C-f /remotehost:filename  RET (or /method:user@remotehost:filename)
+#+END_EXAMPLE
+
+You can also edit local files as root with either of the following
+(note the double colon, which is required).
+
+#+BEGIN_EXAMPLE
+  C-x C-f /su::/etc/hosts
+  C-x C-f /sudo::/etc/hosts
+#+END_EXAMPLE
+
+** Multi-cursor
+
+Basic commands for multicursors  extension
+(https://github.com/magnars/multiple-cursors.el):
+
+- =mc/mark-all-like-this=
+- =mc/mark-previous-like-this=
+- =mc/mark-next like-this=
+
+- =mc/edit-lines=
+- =mc/edit-beginnings-of-line=
+- =mc/edit-ends-of-line=
+
+- =mc/mark-all-like-this-dwim=
+
+[[file:examples/mc-mock-data.json::%5B{"id":%201,"first_name":"Richard","last_name":"Thompson","email":"rthompson0@phpbb.com","country":"Sri%20Lanka","ip_address":"74.99.113.12"},][Multi-cursor example]]
+
+** Goodies
+
+- =M-x list-command-history=
+- =M-x calculator=
+- =M-x calendar=
+- =M-x gomoku=
+- =M-x dunnet=
+- =M-x snake=
+- =M-x tetris=
+- =M-x doctor=
+
+** Tricks
+
+- workaround for Org mode highlighting rules :: put a zero-width space
+     (U+200B; insert in Emacs using Ctrl-x 8 RET 200B RET) between the
+     whitespace and the forward slash. Example:
+  - = C-c x = 
+  - =​ C-c x ​=
+
+- remove ^M characters :: 
+  - =M-x delete-trailing-whitespace=
+  - =C-x h M-% RET C-q C-m RET RET != - (select text in buffer,
+    replace all ^M with an empty string)
+
+#+BEGIN_EXAMPLE
+  aaa
+  bbb
+  ccc
+  
+  ddd
+  eee
+  
+  
+#+END_EXAMPLE
+
+- add new empty lines ::
+  - =M-% RET M-j RET M-j M-J RET !=
+
+#+BEGIN_EXAMPLE
+  aaa
+  bbb
+  ccc
+#+END_EXAMPLE
+
+* Useful links
+** Emacs
+   
+- http://www.gnu.org/software/emacs/tour/
+- http://emacswiki.org/emacs/EmacsNewbieKeyReference
+- http://www.emacswiki.org/emacs?interface=en
+- http://sachachua.com/blog/category/emacs/
+- http://ergoemacs.org/
+- https://github.com/emacs-tw/awesome-emacs
+- http://emacsrocks.com/
+- http://emacs-fu.blogspot.com/
+- http://devblog.avdi.org/category/emacs-reboot/
+- http://www.masteringemacs.org/
+
+** Orgmode
+
+- http://orgmode.org/
+- http://orgmode.org/manual
+- http://doc.norang.ca/org-mode.html
+- http://ergoemacs.org/emacs/emacs_outline.html
+
+** Configs
+
+- https://github.com/rawsyntax/emacs.d
+- http://www.aaronbedra.com/emacs.d/
+- http://pages.sachachua.com/.emacs.d/Sacha.html
+- https://github.com/avdi/.emacs24.d
+- https://github.com/mwfogleman/config/tree/master/home/.emacs.d

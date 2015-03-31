@@ -1,0 +1,191 @@
+
+#+BEGIN: clocktable :maxlevel 1 :scope file
+#+CAPTION: Clock summary at [2015-03-30 Mon 02:43]
+|     Headline |      Time |
+|--------------+-----------|
+| *Total time* | *1d 2:00* |
+|--------------+-----------|
+|   2015-03-30 |      8:00 |
+|   2015-03-31 |      9:30 |
+|   2015-04-01 |      8:30 |
+#+END:
+
+
+#+BEGIN: clocktable :maxlevel 2 :scope file
+#+CAPTION: Clock summary at [2015-03-30 Mon 02:43]
+| Headline                                 |      Time |      |
+|------------------------------------------+-----------+------|
+| *Total time*                             | *1d 2:00* |      |
+|------------------------------------------+-----------+------|
+| 2015-03-30                               |      8:00 |      |
+| \__ Lorem ipsum dolor sit amet           |           | 2:00 |
+| \__ Maecenas pulvinar eget, suscipit sed |           | 2:20 |
+| \__ Praesent wisi eget leo               |           | 1:40 |
+| \__ Duis gravida, erat volutpat          |           | 0:55 |
+| \__ Nulla in                             |           | 1:05 |
+| 2015-03-31                               |      9:30 |      |
+| \__ Lorem ipsum                          |           | 1:30 |
+| \__ Nam                                  |           | 1:00 |
+| \__ Curae                                |           | 1:00 |
+| \__ Quisque                              |           | 2:15 |
+| \__ Suspendisse                          |           | 3:45 |
+| 2015-04-01                               |      8:30 |      |
+| \__ Vivamus                              |           | 8:30 |
+#+END:
+
+
+#+BEGIN: clocktable :maxlevel 3 :scope file
+#+CAPTION: Clock summary at [2015-03-30 Mon 02:42]
+| Headline                                 |      Time |      |      |
+|------------------------------------------+-----------+------+------|
+| *Total time*                             | *1d 2:00* |      |      |
+|------------------------------------------+-----------+------+------|
+| 2015-03-30                               |      8:00 |      |      |
+| \__ Lorem ipsum dolor sit amet           |           | 2:00 |      |
+| \__ Maecenas pulvinar eget, suscipit sed |           | 2:20 |      |
+| \_____ Phasellus orci                    |           |      | 0:30 |
+| \_____ Duis pretium                      |           |      | 1:50 |
+| \__ Praesent wisi eget leo               |           | 1:40 |      |
+| \__ Duis gravida, erat volutpat          |           | 0:55 |      |
+| \__ Nulla in                             |           | 1:05 |      |
+| 2015-03-31                               |      9:30 |      |      |
+| \__ Lorem ipsum                          |           | 1:30 |      |
+| \__ Nam                                  |           | 1:00 |      |
+| \__ Curae                                |           | 1:00 |      |
+| \__ Quisque                              |           | 2:15 |      |
+| \__ Suspendisse                          |           | 3:45 |      |
+| 2015-04-01                               |      8:30 |      |      |
+| \__ Vivamus                              |           | 8:30 |      |
+#+END:
+
+
+#+BEGIN: clocktable :maxlevel 3 :scope file :tags "proj1"
+#+CAPTION: Clock summary at [2015-03-30 Mon 02:42]
+| Headline                        |    Time |      |
+|---------------------------------+---------+------|
+| *Total time*                    | *11:25* |      |
+|---------------------------------+---------+------|
+| 2015-03-30                      |    2:55 |      |
+| \__ Lorem ipsum dolor sit amet  |         | 2:00 |
+| \__ Duis gravida, erat volutpat |         | 0:55 |
+| 2015-03-31                      |    8:30 |      |
+| \__ Lorem ipsum                 |         | 1:30 |
+| \__ Nam                         |         | 1:00 |
+| \__ Quisque                     |         | 2:15 |
+| \__ Suspendisse                 |         | 3:45 |
+#+END:
+
+
+#+BEGIN: clocktable :maxlevel 3 :scope file :tags "proj2"
+#+CAPTION: Clock summary at [2015-03-30 Mon 02:42]
+| Headline                                 |    Time |      |      |
+|------------------------------------------+---------+------+------|
+| *Total time*                             | *14:35* |      |      |
+|------------------------------------------+---------+------+------|
+| 2015-03-30                               |    5:05 |      |      |
+| \__ Maecenas pulvinar eget, suscipit sed |         | 2:20 |      |
+| \_____ Phasellus orci                    |         |      | 0:30 |
+| \_____ Duis pretium                      |         |      | 1:50 |
+| \__ Praesent wisi eget leo               |         | 1:40 |      |
+| \__ Nulla in                             |         | 1:05 |      |
+| 2015-03-31                               |    1:00 |      |      |
+| \__ Curae                                |         | 1:00 |      |
+| 2015-04-01                               |    8:30 |      |      |
+| \__ Vivamus                              |         | 8:30 |      |
+#+END:
+
+
+* 2015-03-30
+** Lorem ipsum dolor sit amet 				 	      :proj1:
+   CLOCK: [2015-03-30 Mon 08:00]--[2015-03-30 Mon 10:00] =>  2:00
+
+- Maecenas in quam
+- Sed eu
+
+** Maecenas pulvinar eget, suscipit sed			      :proj2:
+*** Phasellus orci
+   CLOCK: [2015-03-30 Mon 10:00]--[2015-03-30 Mon 10:30] =>  0:30
+
+- Vivamus est Aliquam
+- Nullam ligula ut quam placerat
+- Donec consectetuer
+
+*** Duis pretium
+   CLOCK: [2015-03-30 Mon 10:30]--[2015-03-30 Mon 12:20] =>  1:50
+
+- Fusce in erat
+- Class aptent taciti
+- Vivamus consequat
+
+** Praesent wisi eget leo					      :proj2:
+   CLOCK: [2015-03-30 Mon 12:20]--[2015-03-30 Mon 14:00] =>  1:40
+
+- Aliquam ut vehicula tortor ante
+- Class aptent taciti sociosqu
+- Suspendisse eu cursus
+
+** Duis gravida, erat volutpat					      :proj1:
+   CLOCK: [2015-03-30 Mon 14:00]--[2015-03-30 Mon 14:55] =>  0:55
+
+- Aliquam
+- Curabitur lacinia dignissim Morbi eleifend
+
+** Nulla in							      :proj2:
+   CLOCK: [2015-03-30 Mon 14:55]--[2015-03-30 Mon 16:00] =>  1:05
+
+- Pellentesque placerat Vivamus
+- Nulla
+
+* 2015-03-31
+** Lorem ipsum							      :proj1:
+   CLOCK: [2015-03-31 Tue 08:30]--[2015-03-31 Mon 10:00] =>  1:30
+
+- Vestibulum vel
+- Suspendisse
+- Ut
+
+** Nam								      :proj1:
+   CLOCK: [2015-03-31 Tue 10:00]--[2015-03-31 Mon 11:00] =>  1:00
+
+- Proin gravida
+- Etiam id ipsum Sed
+
+** Curae							      :proj2:
+   CLOCK: [2015-03-31 Tue 11:00]--[2015-03-31 Mon 12:00] =>  1:00
+
+- Nam
+- Suspendisse orci fermentum orci fermentum
+- Etiam vehicula ullamcorper Suspendisse
+
+**  Quisque							      :proj1:
+   CLOCK: [2015-03-31 Tue 12:00]--[2015-03-31 Mon 14:15] =>  2:15
+
+- Quisque vitae libero auctor neque
+- Aliquam hendrerit sagittis Nulla
+- Praesent
+- Suspendisse elit Mauris
+- Vivamus laoreet a, mauris Pellentesque
+- Donec
+
+**  Suspendisse							      :proj1:
+   CLOCK: [2015-03-31 Tue 14:15]--[2015-03-31 Mon 18:00] =>  3:45
+
+- Praesent consequat Integer eu bibendum
+- Cum sociis
+- Quisque et orci interdum
+
+* 2015-04-01
+** Vivamus							      :proj2:
+   CLOCK: [2015-04-01 Wed 8:00]--[2015-04-01 Wed 16:30] =>  8:30
+
+- Nunc arcu
+- Vestibulum ante ipsum primis
+- Mauris
+- Suspendisse adipiscing
+- Duis pretium erat velit
+- Lorem ipsum dolor
+- Nunc a dolor Praesent tortor
+- Ut pharetra
+- Suspendisse vel tortor Morbi
+- Vivamus
+ 

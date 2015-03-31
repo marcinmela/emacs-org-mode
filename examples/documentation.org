@@ -1,0 +1,1076 @@
+#+TITLE: Mock documentation
+#+AUTHOR: Marcin Mela
+#+EMAIL: marcin.mela@gmail.com
+#+LANGUAGE: en
+#+OPTIONS: H:5 toc:nil
+#+SETUPFILE: ../templates/bigblow-remote.setup
+#+OPTIONS: h:5
+
+#+ODT_STYLES_FILE: ("../templates/template.odt" ("styles.xml" "Pictures/1000020100000640000001EC991BB641.png"))
+
+#+ODT: <text:p text:style-name="PageBreak"/>
+
+#+TOC: headlines 5
+
+#+ODT: <text:p text:style-name="PageBreak"/>
+
+* Text
+
+Pellentesque dapibus suscipit ligula.  Donec posuere augue in quam.
+Etiam vel tortor sodales tellus ultricies commodo.  Suspendisse
+potenti.  Aenean in sem ac leo mollis blandit. Foo bar \(f(x) = \frac{x^3}{n}\).a Donec neque quam,
+dignissim in, mollis nec, sagittis eu, wisi.  Phasellus lacus.  Etiam
+laoreet quam sed arcu. 
+
+#+BEGIN_EXAMPLE
+Phasellus at dui in ligula mollis ultricies.
+Integer placerat tristique nisl.  Praesent augue.  Fusce commodo.
+Vestibulum convallis, lorem a tempus semper, dui dui euismod elit,
+vitae placerat urna tortor vitae lacus.
+#+END_EXAMPLE
+
+Nullam libero mauris, consequat quis, varius et, dictum id, arcu.
+Mauris mollis tincidunt felis.  Aliquam feugiat tellus ut neque.
+
+#+BEGIN_WARNING
+Nulla facilisis, risus a rhoncus fermentum, tellus tellus lacinia
+purus, et dictum nunc justo sit amet elit.
+#+END_WARNING
+
+Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec
+facilisis facilisis, est dui fermentum leo, quis tempor ligula erat
+quis odio.  Nunc porta vulputate tellus.  Nunc rutrum turpis sed pede.
+Sed bibendum. 
+
+- Aliquam posuere ::  Nunc aliquet, augue nec adipiscing interdum,
+     lacus tellus malesuada massa, quis varius mi purus non odio
+- Pellentesque condimentum :: magna ut suscipit hendrerit, ipsum augue
+     ornare nulla, non luctus diam neque sit amet urna.  Curabitur
+     vulputate vestibulum lorem
+- Fusce sagittis :: libero non molestie mollis, magna orci ultrices
+                    dolor, at vulputate neque nulla lacinia eros
+- Sed id ligula quis :: est convallis tempor.  Curabitur lacinia
+     pulvinar nibh.  Nam a sapien.
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec
+hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam
+nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis
+natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+mus.
+
+#+BEGIN_INFO
+Nulla posuere.  Donec vitae dolor.  Nullam tristique diam non
+turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam vestibulum
+accumsan nisl.
+#+END_INFO
+
+Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In id erat non
+orci commodo lobortis.  Proin neque massa, cursus ut, gravida ut,
+lobortis eget, lacus.  Sed diam.  Praesent fermentum tempor tellus.
+Nullam tempus.  Mauris ac felis vel velit tristique imperdiet.  Donec
+at pede. 
+
+#+CAPTION: Emacs UI components 
+#+ATTR_HTML: :align center :width 100%
+[[../images/frame-window-buffer.png]]
+
+Etiam vel neque nec dui dignissim bibendum.  Vivamus id enim.
+Phasellus neque orci, porta a, aliquet quis, semper a, massa.
+Phasellus purus.  Pellentesque tristique imperdiet tortor.  Nam
+euismod tellus id erat.
+
+* Source code
+** Java
+
+Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec
+facilisis facilisis, est dui fermentum leo, quis tempor ligula erat
+quis odio.  Nunc porta vulputate tellus.  Nunc rutrum turpis sed pede.
+Sed bibendum.  Aliquam posuere.  Nunc aliquet, augue nec adipiscing
+interdum, lacus tellus malesuada massa, quis varius mi purus non odio.
+
+#+BEGIN_SRC java
+  public class MyClass {
+  
+      private String name;
+          
+      public MyClass(String name) {
+          this.name = name;
+      }
+  
+      @Override
+      public String toString() {
+          return name;
+      }
+          
+      public static void main(String[] args) {
+          String s = "Instance x";
+          MyClass mc1 = new MyClass(s.replace("x", "1"));
+          MyClass mc2 = new MyClass(s.replace("x", "2"));
+                  
+          System.out.println(mc1);
+          System.out.println(mc2);
+      }
+  }
+#+END_SRC
+
+Pellentesque condimentum, magna ut suscipit hendrerit, ipsum augue
+ornare nulla, non luctus diam neque sit amet urna.  Curabitur
+vulputate vestibulum lorem.  Fusce sagittis, libero non molestie
+mollis, magna orci ultrices dolor, at vulputate neque nulla lacinia
+eros.  Sed id ligula quis est convallis tempor.  Curabitur lacinia
+pulvinar nibh.  Nam a sapien.
+
+** HTML
+
+Pellentesque dapibus suscipit ligula.  Donec posuere augue in quam.
+Etiam vel tortor sodales tellus ultricies commodo.  Suspendisse
+potenti.  Aenean in sem ac leo mollis blandit.  Donec neque quam,
+dignissim in, mollis nec, sagittis eu, wisi.  Phasellus lacus.  Etiam
+laoreet quam sed arcu.  Phasellus at dui in ligula mollis ultricies.
+Integer placerat tristique nisl.
+
+#+BEGIN_SRC html
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="UTF-8">
+      <title>Hello world!</title>
+    </head>
+    <body>
+      <h1>Hello world!</h1>
+    </body>
+  </html>
+#+END_SRC
+
+Praesent augue.  Fusce commodo.  Vestibulum convallis, lorem a tempus
+semper, dui dui euismod elit, vitae placerat urna tortor vitae lacus.
+Nullam libero mauris, consequat quis, varius et, dictum id, arcu.
+Mauris mollis tincidunt felis.  Aliquam feugiat tellus ut neque.
+Nulla facilisis, risus a rhoncus fermentum, tellus tellus lacinia
+purus, et dictum nunc justo sit amet elit.
+
+** Lisp
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec
+hendrerit tempor tellus.
+
+#+BEGIN_SRC lisp
+(defun say-hello ()
+   "Says hello."
+   (interactive)
+   (message "Hello, World!"))
+#+END_SRC
+
+Donec pretium posuere tellus.  Proin quam nisl, tincidunt et, mattis
+eget, convallis nec, purus.
+
+#+BEGIN_SRC lisp
+; ------------------------------------------------------------------------------
+; ----- Toggle window split (horizontal/vertical) -----
+; ------------------------------------------------------------------------------
+(defun my-toggle-window-split ()
+  "Vertical split shows more of each line, horizontal split shows
+more lines. This code toggles between them. It only works for
+frames with exactly two windows."
+  (interactive)
+  (if (= (count-windows) 2)
+      (let* ((this-win-buffer (window-buffer))
+             (next-win-buffer (window-buffer (next-window)))
+             (this-win-edges (window-edges (selected-window)))
+             (next-win-edges (window-edges (next-window)))
+             (this-win-2nd (not (and (<= (car this-win-edges)
+                                         (car next-win-edges))
+                                     (<= (cadr this-win-edges)
+                                         (cadr next-win-edges)))))
+             (splitter
+              (if (= (car this-win-edges)
+                     (car (window-edges (next-window))))
+                  'split-window-horizontally
+                'split-window-vertically)))
+        (delete-other-windows)
+        (let ((first-win (selected-window)))
+          (funcall splitter)
+          (if this-win-2nd (other-window 1))
+          (set-window-buffer (selected-window) this-win-buffer)
+          (set-window-buffer (next-window) next-win-buffer)
+          (select-window first-win)
+          (if this-win-2nd (other-window 1))))))
+
+(global-set-key [(control c) (|)] 'my-toggle-window-split)
+#+END_SRC
+
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+ridiculus mus.  Nulla posuere.  Donec vitae dolor.  Nullam tristique
+diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam
+vestibulum accumsan nisl.
+
+** SQL
+
+Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In id erat non
+orci commodo lobortis. 
+
+#+BEGIN_SRC sql
+  CREATE TABLE `department` (
+    `id` int(11) NOT NULL,
+    `name` varchar(120) NOT NULL,
+    PRIMARY KEY (`id`)
+  );
+  
+  CREATE TABLE `employee` (
+    `id` int(11) NOT NULL,
+    `name` varchar(120) DEFAULT NULL,
+    `department_id` int(11) DEFAULT NULL,
+    PRIMARY KEY (`id`),
+    KEY `fk_empolyee_department_idx` (`department_id`),
+    CONSTRAINT `fk_empolyee_department` 
+      FOREIGN KEY (`department_id`) 
+      REFERENCES `department` (`id`) 
+      ON DELETE NO ACTION 
+      ON UPDATE NO ACTION
+  );
+#+END_SRC
+
+Proin neque massa, cursus ut, gravida ut, lobortis eget, lacus.  Sed
+diam.  Praesent fermentum tempor tellus.  Nullam tempus.  Mauris ac
+felis vel velit tristique imperdiet. 
+
+#+BEGIN_SRC sql
+   INSERT INTO department 
+        VALUES (1, 'HR'),
+               (2, 'IT'),
+               (3, 'Sales');
+
+   INSERT INTO employee
+	VALUES ( 1, 'Raymond Campbell', 1),
+               ( 2,'Erica Bailey', 1),
+               ( 3,'Gary Hinton', 2),
+               ( 4,'Francisco Roberts', 2),
+               ( 5,'John Wright', 2),
+               ( 6,'Lisa Pitcher', 2),
+               ( 7,'Maria Mitton', 3),
+               ( 8,'Richard Amato', 3),
+               ( 9,'Ralph Binion', 3),
+               (10,'Gordon Mooney', 3);
+#+END_SRC
+
+Donec at pede.  Etiam vel neque nec dui dignissim bibendum.  Vivamus
+id enim.  Phasellus neque orci, porta a, aliquet quis, semper a,
+massa.  
+
+#+BEGIN_SRC sql
+  SELECT * 
+    FROM employee e,
+         department d;
+#+END_SRC
+
+Phasellus purus.  Pellentesque tristique imperdiet tortor.
+Nam euismod tellus id erat.
+
+#+BEGIN_SRC sql
+  SELECT * 
+    FROM employee e,
+         department d
+   WHERE e.department_id = d.id;
+#+END_SRC
+
+Donec at pede.  Etiam vel neque nec dui dignissim bibendum.  Vivamus
+id enim.  Phasellus neque orci, porta a, aliquet quis, semper a,
+massa.  Phasellus purus.  Pellentesque tristique imperdiet tortor.
+Nam euismod tellus id erat.
+
+* Tables
+** Plain table
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec
+hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam
+nisl, tincidunt et, mattis eget, convallis nec, purus.
+
+| <c>  |              |             |                               |                | <l>               |
+| *ID* | *First name* | *Last name* | *Email*                       | *Country*      | *IP address*      |
+|------+--------------+-------------+-------------------------------+----------------+-------------------|
+| 1    | Pamela       | Diaz        | pdiaz0@princeton.edu          | Philippines    | =136.241.7.209=   |
+| 2    | Karen        | Gibson      | kgibson1@tinypic.com          | Indonesia      | =192.115.105.135= |
+| 3    | Steven       | Mitchell    | smitchell2@pen.io             | Portugal       | =82.194.169.157=  |
+| 4    | Fred         | Marshall    | fmarshall3@gmpg.org           | Ecuador        | =109.24.162.42=   |
+| 5    | Mary         | Tucker      | mtucker4@rakuten.co.jp        | Kosovo         | =133.24.194.251=  |
+| 6    | Victor       | Day         | vday5@oracle.com              | China          | =59.239.81.76=    |
+| 7    | Andrea       | Ramos       | aramos6@narod.ru              | Indonesia      | =218.154.102.156= |
+| 8    | Stephen      | Thomas      | sthomas7@canalblog.com        | China          | =200.228.15.235=  |
+| 9    | David        | Morales     | dmorales8@123-reg.co.uk       | South Africa   | =55.200.191.253=  |
+| 10   | Peter        | Rice        | price9@booking.com            | Canada         | =195.6.174.224=   |
+| 11   | Sarah        | Henry       | shenrya@hp.com                | Pakistan       | =99.60.97.177=    |
+| 12   | Ralph        | Ford        | rfordb@tmall.com              | Indonesia      | =117.3.236.229=   |
+| 13   | Bruce        | Gibson      | bgibsonc@statcounter.com      | Bolivia        | =21.239.94.248=   |
+| 14   | Bruce        | Black       | bblackd@wikia.com             | Russia         | =74.65.44.187=    |
+| 15   | Christopher  | Gardner     | cgardnere@tuttocitta.it       | Indonesia      | =168.62.34.191=   |
+| 16   | Christina    | Cunningham  | ccunninghamf@slashdot.org     | Czech Republic | =34.95.33.109=    |
+| 17   | David        | Morales     | dmoralesg@wordpress.com       | Russia         | =32.232.227.54=   |
+| 18   | Juan         | West        | jwesth@people.com.cn          | China          | =4.220.112.102=   |
+| 19   | Tammy        | Bryant      | tbryanti@webmd.com            | Tanzania       | =140.159.121.216= |
+| 20   | Kevin        | Martinez    | kmartinezj@facebook.com       | Indonesia      | =45.141.113.171=  |
+| 21   | Philip       | Webb        | pwebbk@ca.gov                 | China          | =144.93.176.195=  |
+| 22   | Lois         | Frazier     | lfrazierl@adobe.com           | Philippines    | =233.43.31.25=    |
+| 23   | Joshua       | Gardner     | jgardnerm@com.com             | Russia         | =60.229.91.0=     |
+| 24   | Jessica      | Black       | jblackn@mapquest.com          | China          | =189.222.40.122=  |
+| 25   | Timothy      | Ferguson    | tfergusono@xrea.com           | Russia         | =199.44.127.141=  |
+| 26   | Alice        | Evans       | aevansp@weather.com           | France         | =142.3.47.15=     |
+| 27   | James        | Perry       | jperryq@google.co.uk          | Tunisia        | =31.128.119.125=  |
+| 28   | Kelly        | Reynolds    | kreynoldsr@altervista.org     | Croatia        | =51.151.186.69=   |
+| 29   | Bruce        | Watson      | bwatsons@reuters.com          | Brazil         | =252.130.202.249= |
+| 30   | Janet        | Baker       | jbakert@jigsy.com             | Indonesia      | =213.7.193.60=    |
+| 31   | Ralph        | Collins     | rcollinsu@netvibes.com        | Indonesia      | =125.176.149.144= |
+| 32   | John         | Kim         | jkimv@guardian.co.uk          | Indonesia      | =16.184.161.156=  |
+| 33   | Craig        | Ray         | crayw@japanpost.jp            | Poland         | =228.110.157.133= |
+| 34   | Russell      | Ellis       | rellisx@gnu.org               | Cameroon       | =146.208.208.18=  |
+| 35   | Jeremy       | Owens       | jowensy@1688.com              | Malaysia       | =229.150.82.16=   |
+| 36   | Wayne        | Anderson    | wandersonz@simplemachines.org | Malta          | =244.210.158.125= |
+| 37   | John         | Thomas      | jthomas10@myspace.com         | China          | =99.160.150.55=   |
+| 38   | Carolyn      | Kennedy     | ckennedy11@google.ca          | Japan          | =1.18.106.152=    |
+| 39   | Howard       | Robertson   | hrobertson12@theguardian.com  | Colombia       | =124.18.111.231=  |
+| 40   | Michelle     | Mcdonald    | mmcdonald13@java.com          | Madagascar     | =241.31.62.13=    |
+| 41   | Jennifer     | Ortiz       | jortiz14@chron.com            | China          | =101.239.33.185=  |
+| 42   | Brandon      | Hernandez   | bhernandez15@goo.ne.jp        | Indonesia      | =33.147.224.213=  |
+| 43   | Roger        | Freeman     | rfreeman16@de.vu              | Tunisia        | =217.44.3.134=    |
+| 44   | Shawn        | Butler      | sbutler17@msn.com             | China          | =20.75.176.126=   |
+| 45   | Janet        | Fuller      | jfuller18@last.fm             | Sweden         | =132.92.229.218=  |
+| 46   | Joshua       | Ellis       | jellis19@diigo.com            | Canada         | =45.25.85.254=    |
+| 47   | Timothy      | Phillips    | tphillips1a@mapy.cz           | Philippines    | =152.216.203.164= |
+| 48   | Julia        | Jackson     | jjackson1b@cbc.ca             | Japan          | =178.167.5.142=   |
+| 49   | Cynthia      | Day         | cday1c@reference.com          | Mexico         | =96.10.55.153=    |
+| 50   | Lisa         | Morgan      | lmorgan1d@yolasite.com        | Russia         | =194.69.130.218=  |
+
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+ridiculus mus.  Nulla posuere.  Donec vitae dolor.  Nullam tristique
+diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam
+vestibulum accumsan nisl.
+
+** Plot table data
+
+Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In id erat non
+orci commodo lobortis.  Proin neque massa, cursus ut, gravida ut,
+lobortis eget, lacus. 
+
+#+ATTR_HTML: :border 2 :rules all :frame border
+#+tblname:perf-test-1
+| *Consumers* | *Time spent [ms]* | *Errors* |
+|-------------+-------------------+----------|
+|           1 |           1847626 |        0 |
+|           5 |            392726 |        0 |
+|          15 |            126352 |        0 |
+|          50 |             37892 |        5 |
+|         100 |             22231 |       27 |
+|         200 |             10987 |       89 |
+|         400 |              7235 |      150 |
+
+#+begin_src gnuplot :var data=perf-test-1 :file generated-perf-test-1.png
+reset
+set xlabel "Consumers"
+set ylabel "Time [ms]"
+set format y "%5.0f"
+plot data u 2:xticlabels(1)  w lp lw 2 notitle
+#+end_src
+
+Sed diam.  Praesent fermentum tempor tellus.  Nullam tempus.  Mauris
+ac felis vel velit tristique imperdiet.  Donec at pede.  Etiam vel
+neque nec dui dignissim bibendum.  Vivamus id enim.  Phasellus neque
+orci, porta a, aliquet quis, semper a, massa.  Phasellus purus.
+Pellentesque tristique imperdiet tortor.  Nam euismod tellus id erat.
+
+* Diagrams
+** Sequence diagrams
+
+Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec
+facilisis facilisis, est dui fermentum leo, quis tempor ligula erat
+quis odio.  Nunc porta vulputate tellus.  Nunc rutrum turpis sed pede.
+Sed bibendum. 
+
+#+BEGIN_SRC plantuml :file generated-seq-diag1.png :results silent
+Alice -> Bob: Authentication Request
+
+alt successful case
+
+    Bob -> Alice: Authentication Accepted
+    
+else some kind of failure
+
+    Bob -> Alice: Authentication Failure
+    group My own label
+    	Alice -> Log : Log attack start
+        loop 1000 times
+            Alice -> Bob: DNS Attack
+        end
+    	Alice -> Log : Log attack end
+    end
+    
+else Another type of failure
+
+   Bob -> Alice: Please repeat
+   
+end
+#+END_SRC
+
+#+CAPTION: Sequence diagram - example taken from plantuml.sourceforge.net
+#+ATTR_HTML: :align center
+[[./generated-seq-diag1.png]]
+
+Aliquam posuere.  Nunc aliquet, augue nec adipiscing
+interdum, lacus tellus malesuada massa, quis varius mi purus non odio.
+Pellentesque condimentum, magna ut suscipit hendrerit, ipsum augue
+ornare nulla, non luctus diam neque sit amet urna.
+
+#+BEGIN_SRC plantuml :file generated-seq-diag2.png :results silent
+participant User
+
+User -> A: DoWork
+activate A
+
+A -> B: << createRequest >>
+activate B
+
+B -> C: DoWork
+activate C
+C --> B: WorkDone
+destroy C
+
+B --> A: RequestCreated
+deactivate B
+
+A -> User: Done
+deactivate A
+#+END_SRC
+
+#+CAPTION: Sequence diagram - example taken from plantuml.sourceforge.net
+#+ATTR_HTML: :align center
+[[./generated-seq-diag2.png]]
+
+Curabitur vulputate vestibulum lorem.  Fusce sagittis, libero non
+molestie mollis, magna orci ultrices dolor, at vulputate neque nulla
+lacinia eros.  Sed id ligula quis est convallis tempor.  Curabitur
+lacinia pulvinar nibh.  Nam a sapien.
+
+** Use case diagrams
+Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo,
+quis tempor ligula erat quis odio.  Nunc porta vulputate tellus.  Nunc
+rutrum turpis sed pede. 
+
+#+BEGIN_SRC plantuml :file generated-uc-diag1.png :results silent
+:user: -left-> (dummyLeft) 
+:user: -right-> (dummyRight) 
+:user: -up-> (dummyUp)
+:user: -down-> (dummyDown)
+#+END_SRC
+
+#+CAPTION: Use case diagram - taken from plantuml.sourceforge.net
+#+ATTR_HTML: :align center
+[[./generated-uc-diag1.png]]
+
+Sed bibendum.  Aliquam posuere.  Nunc aliquet, augue nec adipiscing
+interdum, lacus tellus malesuada massa, quis varius mi purus non odio.
+
+#+BEGIN_SRC plantuml :file generated-uc-diag2.png :results silent
+User << Human >>
+:Main Database: as MySql << Application >>
+(Start) << One Shot >>
+(Use the application) as (Use) << Main >>
+
+User -> (Start)
+User --> (Use)
+
+MySql --> (Use)
+#+END_SRC
+
+#+CAPTION: Use case diagram - taken from plantuml.sourceforge.net
+#+ATTR_HTML: :align center
+[[./generated-uc-diag2.png]]
+
+Pellentesque condimentum, magna ut suscipit hendrerit, ipsum augue
+ornare nulla, non luctus diam neque sit amet urna.  Curabitur
+vulputate vestibulum lorem.  
+
+#+BEGIN_SRC plantuml :file generated-uc-diag3.png :results silent
+left to right direction
+skinparam packageStyle rect
+actor customer
+actor clerk
+rectangle checkout {
+  customer -- (checkout)
+  (checkout) .> (payment) : include
+  (help) .> (checkout) : extends
+  (checkout) -- clerk
+}
+#+END_SRC
+
+#+CAPTION: Use case diagram - taken from plantuml.sourceforge.net
+#+ATTR_HTML: :align center
+[[./generated-uc-diag3.png]]
+
+Fusce sagittis, libero non molestie mollis, magna orci ultrices dolor,
+at vulputate neque nulla lacinia eros.  Sed id ligula quis est
+convallis tempor.  Curabitur lacinia pulvinar nibh.  Nam a sapien.
+
+** Class, component, object
+*** Class
+Lorem ipsum dolor sit amet sagittis luctus et ultrices condimentum
+dignissim. Pellentesque eu turpis viverra est ullamcorper et, posuere
+cubilia Curae, Cras ac turpis non ipsum. Morbi quis consectetuer
+adipiscing elit. 
+
+#+BEGIN_SRC plantuml :file generated-coo-diag1.png :results silent
+class BaseClass
+
+namespace net.dummy #DDDDDD {
+    .BaseClass <|-- Person
+    Meeting o-- Person
+    
+    .BaseClass <|- Meeting
+}
+
+namespace net.foo {
+  net.dummy.Person  <|- Person
+  .BaseClass <|-- Person
+
+  net.dummy.Meeting o-- Person
+}
+
+BaseClass <|-- net.unused.Person
+#+END_SRC
+
+#+CAPTION: Class diagram - taken from plantuml.sourceforge.net
+#+ATTR_HTML: :align center
+[[./generated-coo-diag1.png]]
+
+Nulla ligula in vestibulum tincidunt sed, neque. Class aptent taciti
+sociosqu ad litora torquent per inceptos hymenaeos. Curabitur magna et
+lacus sed felis non ante. Donec lectus blandit id, bibendum metus
+nonummy ligula.
+
+#+BEGIN_SRC plantuml :file generated-coo-diag2.png :results silent
+abstract class AbstractList
+abstract AbstractCollection
+interface List
+interface Collection
+
+List <|-- AbstractList
+Collection <|-- AbstractCollection
+
+Collection <|- List
+AbstractCollection <|- AbstractList
+AbstractList <|-- ArrayList
+
+class ArrayList {
+  Object[] elementData
+  size()
+}
+
+enum TimeUnit {
+  DAYS
+  HOURS
+  MINUTES
+}
+
+annotation SuppressWarnings
+#+END_SRC
+
+#+CAPTION: Class diagram - taken from plantuml.sourceforge.net
+#+ATTR_HTML: :align center
+[[./generated-coo-diag2.png]]
+
+Nunc erat felis, vestibulum ligula. Cras ut tellus
+suscipit elementum vel, urna. Aenean quis quam sed leo tristique
+commodo. Cras congue, lacus et tellus. 
+
+*** Component
+
+Nunc arcu faucibus vestibulum. Nullam sit amet
+risus. Sed lobortis vitae, congue ac, eleifend adipiscing non, dictum
+libero, id mollis tempor venenatis suscipit. Nulla nunc venenatis
+nisl. Proin non nisl sit amet magna. Mauris vitae ornare
+tellus. Integer egestas, orci.
+
+#+BEGIN_SRC plantuml :file generated-coo-diag3.png :results silent
+package "Some Group" {
+  HTTP - [First Component]
+  [Another Component]
+}
+ 
+node "Other Groups" {
+  FTP - [Second Component]
+  [First Component] --> FTP
+} 
+
+cloud {
+  [Example 1]
+}
+
+
+database "MySql" {
+  folder "This is my folder" {
+    [Folder 3]
+  }
+  frame "Foo" {
+    [Frame 4]
+  }
+}
+
+
+[Another Component] --> [Example 1]
+[Example 1] --> [Folder 3]
+[Folder 3] --> [Frame 4]
+#+END_SRC
+
+#+CAPTION: Component diagram - taken from plantuml.sourceforge.net
+#+ATTR_HTML: :align center
+[[./generated-coo-diag3.png]]
+
+Aenean nulla ac diam. Etiam non sem urna sem condimentum justo iaculis
+arcu nibh consectetuer congue ac, augue. Lorem ipsum dolor urna risus
+et cursus mauris et ultrices velit, a urna. Donec blandit, quam. 
+
+#+BEGIN_SRC plantuml :file generated-coo-diag4.png :results silent
+interface "Data Access" as DA
+
+DA - [First Component] 
+[First Component] ..> HTTP : use
+
+note left of HTTP : Web Service only
+
+note right of [First Component]
+  A note can also
+  be on several lines
+end note
+#+END_SRC
+
+#+CAPTION: Component diagram - taken from plantuml.sourceforge.net
+#+ATTR_HTML: :align center
+[[./generated-coo-diag4.png]]
+
+Donec eu diam. Nullam aliquet at, volutpat quis, ultricies nulla,
+accumsan lorem. Suspendisse fringilla purus scelerisque a, volutpat
+quam felis vitae ante. Suspendisse luctus arcu vitae mauris.
+
+*** Object
+
+Praesent rutrum. Donec a lacus. Vivamus ut pede. Mauris lobortis
+volutpat. Vivamus vitae arcu massa, dictum id, semper vel, dapibus et,
+neque. Integer non nisl at libero. Aenean congue arcu erat, molestie
+elit, dictum aliquet commodo porta.
+
+#+BEGIN_SRC plantuml :file generated-coo-diag5.png :results silent
+object foo
+
+foo -left-> dummyLeft 
+foo -right-> dummyRight 
+foo -up-> dummyUp 
+foo -down-> dummyDown
+#+END_SRC
+
+#+CAPTION: Object diagram - taken from plantuml.sourceforge.net
+#+ATTR_HTML: :align center
+[[./generated-coo-diag5.png]]
+
+Quisque pharetra, urna ut tellus quis risus. Sed non elit dapibus
+risus. Vivamus iaculis, turpis faucibus velit in est massa imperdiet
+ante at porttitor lectus nulla pellentesque dolor. Vestibulum et netus
+et felis augue turpis, accumsan vitae, congue eu.
+
+** Activity, state
+
+*** Activity
+
+Cum sociis natoque penatibus et malesuada fames ac elit justo non
+magna. Nulla faucibus lorem. Donec pulvinar massa quis diam. Sed
+porttitor. Phasellus ornare ligula accumsan fringilla elementum in,
+mollis nulla sit amet turpis et ultrices augue. Sed placerat
+scelerisque, dui eu odio. Suspendisse potenti. Suspendisse ac augue a
+odio nec tellus. 
+
+#+BEGIN_SRC plantuml :file generated-as-diag1.png :results silent
+if (multiprocessor?) then (yes)
+  fork
+    :Treatment 1;
+  fork again
+    :Treatment 2;
+  end fork
+else (monoproc)
+  :Treatment 1;
+  :Treatment 2;
+endif
+#+END_SRC
+
+#+CAPTION: Activity diagram - taken from plantuml.sourceforge.net
+#+ATTR_HTML: :align center
+[[./generated-as-diag1.png]]
+
+In sodales libero. Donec rutrum elementum. Phasellus
+ornare nisl, semper et, congue ac, varius nunc fringilla orci. Cum
+sociis natoque penatibus et ligula. Sed diam sed lorem ligula, quis
+arcu. Suspendisse vehicula. Integer mi non nonummy malesuada, arcu ac
+mauris vitae sem. Aenean ut viverra diam leo eu mollis aliquam, nulla
+ac lectus. Nunc in augue.
+
+#+BEGIN_SRC plantuml :file generated-as-diag2.png :results silent
+|Swimlane1|
+start
+:foo1;
+|#AntiqueWhite|Swimlane2|
+:foo2;
+:foo3;
+|Swimlane1|
+:foo4;
+|Swimlane2|
+:foo5;
+stop
+#+END_SRC
+
+#+CAPTION: Activity diagram - taken from plantuml.sourceforge.net
+#+ATTR_HTML: :align center
+[[./generated-as-diag2.png]]
+
+Praesent odio nec ligula lorem eros vulputate lectus. Nunc
+gravida. Duis non ullamcorper risus. Aliquam posuere cubilia Curae,
+Nulla nec felis augue eu risus. Etiam wisi a dolor urna, eu ipsum
+dolor sit amet cursus ut, lobortis vitae, placerat faucibus. Sed
+posuere sit amet lorem.
+
+#+BEGIN_SRC plantuml :file generated-as-diag3.png :results silent
+start
+:ClickServlet.handleRequest();
+:new page;
+if (Page.onSecurityCheck) then (true)
+  :Page.onInit();
+  if (isForward?) then (no)
+    :Process controls;
+    if (continue processing?) then (no)
+      stop
+    endif
+    
+    if (isPost?) then (yes)
+      :Page.onPost();
+    else (no)
+      :Page.onGet();
+    endif
+    :Page.onRender();
+  endif
+else (false)
+endif
+
+if (do redirect?) then (yes)
+  :redirect process;
+else
+  if (do forward?) then (yes)
+    :Forward request;
+  else (no)
+    :Render page template;
+  endif
+endif
+
+stop
+#+END_SRC
+
+#+CAPTION: Activity diagram - taken from plantuml.sourceforge.net
+#+ATTR_HTML: :align center
+[[./generated-as-diag3.png]]
+
+*** State
+
+Curabitur placerat, egestas a, ultricies tincidunt, eros quis nulla
+nec sapien id tortor. Nullam vulputate wisi eget. Nunc dictum accumsan
+adipiscing, risus arcu quis faucibus orci ac lacus sagittis non,
+dictum ut, eleifend at, accumsan imperdiet, neque ac lacinia at,
+posuere vitae, pellentesque facilisis. Maecenas lacus. Nunc nunc. Nam
+diam. Nulla facilisis gravida, nisl mollis nulla nulla, accumsan
+vestibulum. Cras dignissim. 
+
+#+BEGIN_SRC plantuml :file generated-as-diag4.png :results silent
+[*] -up-> First
+First -right-> Second
+Second --> Third
+Third -left-> Last
+
+#+END_SRC
+
+#+CAPTION: State diagram - taken from plantuml.sourceforge.net
+#+ATTR_HTML: :align center
+[[./generated-as-diag4.png]]
+
+Nunc nunc. Etiam ut lacus sit amet nibh. Maecenas non mi libero,
+facilisis pellentesque dolor. Nulla facilisi. Etiam accumsan luctus,
+enim sit amet, tellus. In porttitor risus. Nulla sed augue. Fusce et
+commodo ligula, elementum odio est dolor, dictum a, volutpat tempus
+dictum ut, dignissim justo.
+
+#+BEGIN_SRC plantuml :file generated-as-diag5.png :results silent
+scale 350 width
+[*] --> Active
+
+state Active {
+  [*] -> NumLockOff
+  NumLockOff --> NumLockOn : EvNumLockPressed
+  NumLockOn --> NumLockOff : EvNumLockPressed
+  --
+  [*] -> CapsLockOff
+  CapsLockOff --> CapsLockOn : EvCapsLockPressed
+  CapsLockOn --> CapsLockOff : EvCapsLockPressed
+  --
+  [*] -> ScrollLockOff
+  ScrollLockOff --> ScrollLockOn : EvCapsLockPressed
+  ScrollLockOn --> ScrollLockOff : EvCapsLockPressed
+}
+#+END_SRC
+
+#+CAPTION: State diagram - taken from plantuml.sourceforge.net
+#+ATTR_HTML: :align center
+[[./generated-as-diag5.png]]
+
+Donec odio a elit a lorem nec tortor justo semper nec, suscipit dui
+quis justo. Vivamus fermentum nec, iaculis ut, sagittis vel, accumsan
+interdum. Proin. Morbi id felis. Nullam iaculis scelerisque. Duis
+consequat auctor nibh, sollicitudin non, tristique purus. Class aptent
+taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+hymenaeos. Phasellus lacinia dapibus, libero mollis nunc interdum sem
+fringilla augue imperdiet wisi.
+
+#+BEGIN_SRC plantuml :file generated-as-diag6.png :results silent
+[*] -> State1
+State1 --> State2 : Succeeded
+State1 --> [*] : Aborted
+State2 --> State3 : Succeeded
+State2 --> [*] : Aborted
+state State3 {
+  state "Accumulate Enough Data\nLong State Name" as long1
+  long1 : Just a test
+  [*] --> long1
+  long1 --> long1 : New Data
+  long1 --> ProcessData : Enough Data
+}
+State3 --> State3 : Failed
+State3 --> [*] : Succeeded / Save Result
+State3 --> [*] : Aborted
+#+END_SRC
+
+#+CAPTION: State diagram - taken from plantuml.sourceforge.net
+#+ATTR_HTML: :align center
+[[./generated-as-diag6.png]]
+
+
+Sed id felis. Maecenas pellentesque adipiscing sapien et wisi. Aenean
+quis tortor. Morbi sem sit amet ligula. Mauris eros ac
+ipsum. Vestibulum ante pellentesque at, viverra consectetuer. Aliquam
+eleifend, metus tellus, fringilla condimentum, pulvinar lacinia, diam
+elit sit amet, consectetuer vulputate risus suscipit sapien magna
+felis vitae libero dolor, scelerisque nulla ornare suscipit, velit in
+enim. Phasellus at eros. 
+
+** Other diagrams
+
+*** User interfaces
+
+Nullam laoreet, purus consectetuer at, malesuada quis, orci. In hac
+habitasse platea dictumst. Nulla quis neque. Cras. Curae, Quisque at
+tellus pede dictum wisi augue sit amet, consectetuer eget,
+eros. Suspendisse elit laoreet porta. Aenean feugiat mattis sed,
+sollicitudin vitae, nunc. Nam ultrices. Vestibulum ornare tortor
+vehicula dolor ut venenatis placerat, nulla dictum vel, quam.
+
+#+BEGIN_SRC plantuml :file generated-other-diag1.png :results silent
+salt
+{+
+{* File | Edit | Source | Refactor }
+{/ General | Fullscreen | Behavior | Saving }
+{
+	{ Open image in: | ^Smart Mode^ }
+	[X] Smooth images when zoomed
+	[X] Confirm image deletion
+	[ ] Show hidden images 
+}
+[Close]
+}
+#+END_SRC
+
+#+CAPTION: User interface diagram (Salt) - taken from plantuml.sourceforge.net
+#+ATTR_HTML: :align center
+[[./generated-other-diag1.png]]
+
+
+Maecenas viverra accumsan, libero quis neque tristique sem. Nam
+vestibulum et, neque. Etiam ornare nulla sit amet neque ut tortor. Ut
+sed arcu. In hac habitasse platea dictumst. 
+
+#+BEGIN_SRC plantuml :file generated-other-diag2.png :results silent
+salt
+{+
+{* File | Edit | Source | Refactor 
+ Refactor | New | Open File | - | Close | Close All }
+{/ General | Fullscreen | Behavior | Saving }
+{
+	{ Open image in: | ^Smart Mode^ }
+	[X] Smooth images when zoomed
+	[X] Confirm image deletion
+	[ ] Show hidden images 
+}
+[Close]
+}
+#+END_SRC
+
+#+CAPTION: User interface diagram (Salt) - taken from plantuml.sourceforge.net
+#+ATTR_HTML: :align center
+[[./generated-other-diag2.png]]
+
+
+Praesent vitae ultrices volutpat. Ut eget lacus tincidunt
+justo. Vestibulum dapibus, mauris vitae augue. Duis neque auctor
+neque. Etiam id diam.
+
+#+BEGIN_SRC plantuml :file generated-other-diag3.png :results silent
+salt
+{
+  Login<&person> | "MyName   "
+  Password<&key> | "****     "
+  [Cancel <&circle-x>] | [OK <&account-login>]
+}
+#+END_SRC
+
+#+CAPTION: User interface diagram (Salt) - taken from plantuml.sourceforge.net
+#+ATTR_HTML: :align center
+[[./generated-other-diag3.png]]
+
+
+Morbi id lorem. In hac habitasse platea dictumst. Sed id sollicitudin
+orci. Donec a ornare eu, egestas a, sodales rutrum.
+
+*** General diagrams
+
+Lorem ipsum pharetra sem, posuere vitae, faucibus velit eros nisl,
+semper et, commodo ipsum in est. Vivamus metus wisi, aliquam
+purus. Aenean scelerisque in, dapibus quam fermentum lobortis eu,
+ullamcorper feugiat, urna viverra sit amet dui eu lorem ligula,
+nonummy consequat non, quam. 
+
+#+BEGIN_SRC plantuml :file generated-other-diag4.png :results silent
+ditaa
+
+   +--------+   +-------+    +-------+
+   |        +---+ ditaa +--> |       |
+   |  Text  |   +-------+    |diagram|
+   |Document|   |!magic!|    |       |
+   |     {d}|   |       |    |       |
+   +---+----+   +-------+    +-------+
+       :                         ^
+       |       Lots of work      |
+       +-------------------------+
+
+#+END_SRC
+
+#+CAPTION: Ditaa diagram - taken from plantuml.sourceforge.net
+#+ATTR_HTML: :align center
+[[./generated-other-diag4.png]]
+
+
+Mauris nec magna et ultrices posuere vitae, nibh. Sed fringilla ante
+ipsum scelerisque pede placerat ante. Vivamus vel nonummy justo at
+elit justo nibh vel odio orci, in faucibus orci luctus augue ut felis
+vitae erat volutpat. Praesent ac diam. Fusce imperdiet nec, pharetra
+lorem velit odio id mauris luctus et tellus. Morbi porttitor, arcu id
+nisl. Nulla mi.
+
+#+BEGIN_SRC plantuml :file generated-other-diag5.png :results silent
+ditaa
+
+   +------+   +-----+   +-----+   +-----+
+   |{io}  |   |{d}  |   |{s}  |   |cBLU |
+   | Foo  +---+ Bar +---+ Baz +---+ Moo |
+   |      |   |     |   |     |   |     |
+   +------+   +-----+   +--+--+   +-----+
+                           |
+              /-----\      |      +------+
+              |     |      |      | c1AB |
+              | Goo +------+---=--+ Shoo |
+              \-----/             |      |
+                                  +------+
+
+#+END_SRC
+
+#+CAPTION: Ditaa diagram - taken from http://home.fnal.gov/~neilsen/notebook/orgExamples
+#+ATTR_HTML: :align center
+[[./generated-other-diag5.png]]
+
+Etiam malesuada elit arcu, rutrum ut, faucibus orci nec
+eros. Phasellus ornare risus. Phasellus urna tellus non dui dui,
+ultrices varius. Quisque sed eros viverra ligula. Nam posuere. Quisque
+ornare sollicitudin. Vestibulum id eros. Sed in nibh orci interdum
+faucibus, convallis auctor. 
+
+#+BEGIN_SRC plantuml :file generated-other-diag6.png :results silent
+graph G {
+	run -- intr;
+	intr -- runbl;
+	runbl -- run;
+	run -- kernel;
+	kernel -- zombie;
+	kernel -- sleep;
+	kernel -- runmem;
+	sleep -- swap;
+	swap -- runswap;
+	runswap -- new;
+	runswap -- runmem;
+	new -- runmem;
+	sleep -- runmem;
+}
+#+END_SRC
+
+#+CAPTION: GraphViz diagram - taken from graphviz.org
+#+ATTR_HTML: :align center
+[[./generated-other-diag6.png]]
+
+Maecenas facilisis, wisi at arcu. Suspendisse vestibu lum mauris
+consequat lacus lorem, iaculis pretium at, nisl. Etiam hendrerit eget,
+rutrum nulla, convallis nec, mattis id, wisi. Mauris interdum euismod
+quam enim, id leo mollis ultrices, gravida pulvinar mollis. Nunc justo
+vel tortor. Sed metus. Vestibulum ante sit amet quam. Nunc non
+purus. Aenean nulla dictum ut, libero. Duis at risus libero, pharetra
+sem, posuere nisl nulla sit amet dui. Morbi ultrices
+nulla. Pellentesque sed orci orci, viverra eget, facilisis
+libero. Cras dictum velit, rhoncus purus, nec tincidunt dictum eu,
+semper id, congue ac, accumsan congue.
+
+#+BEGIN_SRC plantuml :file generated-other-diag7.png :results silent
+digraph G {
+    edge [label=0];
+    graph [ranksep=0];
+    A [shape=record, label="{{A|1}|00}"];
+    M [shape=record, label="{{M|1}|01}"];
+    S [shape=record, label="{{S|1}|10}"];
+    C [shape=record, label="{{C|1}|110}"];
+    E [shape=record, label="{{E|1}|111}"];
+    CE [label=2];
+    5 -> 2 -> A;
+    3 -> S;
+    CE -> C;2 -> M [label=1];
+    5 -> 3 -> CE -> E [label=1];
+}
+#+END_SRC
+
+#+CAPTION: GraphViz diagram - generated on huffman.ooz.ie
+#+ATTR_HTML: :align center
+[[./generated-other-diag7.png]]
+
+Maecenas facilisis, wisi at arcu. Suspendisse vestibulum mauris
+consequat lacus lorem, iaculis pretium at, nisl. Etiam hendrerit eget,
+rutrum nulla, convallis nec, mattis id, wisi. Mauris interdum euismod
+quam enim, id leo mollis ultrices, gravida pulvinar mollis. Nunc justo
+vel tortor. Nam in wisi. Nam turpis et turpis. Nullam fermentum
+laoreet, purus fringilla et, tincidunt sed, rutrum lorem. Nullam risus
+sit amet, consectetuer vulputate molestie. Quisque justo nibh ac arcu.
+
+#+BEGIN_SRC plantuml :file generated-other-diag8.png :results silent
+sudoku
+#+END_SRC
+
+#+CAPTION: Sudoku diagram
+#+ATTR_HTML: :align center
+[[./generated-other-diag8.png]]
+
+Sed metus. Vestibulum ante sit amet quam. Nunc a
+lectus. Sed egestas vitae, quam. Praesent odio consequat sapien varius
+nec, lacinia varius risus at est. Maecenas eget velit ornare id,
+eleifend non, iaculis odio, in nunc. Vestibulum.

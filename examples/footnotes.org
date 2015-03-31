@@ -1,0 +1,25 @@
+* Lorem ipsum
+
+Lorem ipsum dolor sit amet[fn:1] enim. Mauris ullamcorper orci convallis
+non, vehicula tortor et tortor. Cum sociis natoque penatibus et pede
+lobortis volutpat. Phasellus purus. Sed fringilla mollis. Proin
+scelerisque odio nec quam. Maecenas nunc.[fn:2] Vivamus semper feugiat. Cum
+sociis natoque penatibus et odio. Nunc justo. Aliquam id tincidunt
+molestie, nunc eget sem et malesuada tincidunt, nonummy commodo odio
+adipiscing at, posuere cubilia Curae, Nulla cursus
+consectetuer. Aliquam eleifend, ligula.[fn:3] Sed bibendum. In malesuada
+quis, interdum euismod elit. Mauris suscipit id, ultrices velit wisi,
+id lorem leo, pretium justo[fn:4].
+
+* Footnotes
+
+[fn:1] Praesent et magnis dis parturient montes
+
+[fn:2]  Nulla ac felis. Duis sit amet, tortor
+
+[fn:3] Cras nec nunc eu fermentum in, elementum congue, velit wisi,
+dapibus diam.
+
+[fn:4] Mauris ullamcorper ligula libero, pharetra varius. Cras nec
+nunc eu fermentum in, elementum congue, velit wisi, dapibus
+diam. Morbi congue ut, pellentesque facilisis. Nulla ac felis.

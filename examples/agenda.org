@@ -1,0 +1,57 @@
+* Project A
+
+** TODO Create data model documentation
+   SCHEDULED: <2015-04-02 Thu>
+
+** TODO Create XML schema
+   SCHEDULED: <2015-04-02 Thu>
+
+** TODO Configure JIRA account					      :setup:
+   SCHEDULED: <2015-03-31 Tue>
+
+** TODO Configure Gerrit acount					      :setup:
+   SCHEDULED: <2015-03-31 Tue>
+
+** TODO Check if login form is vulnerable to SQL injection
+   SCHEDULED: <2015-04-03 Fri>
+
+** TODO Read documentation
+   SCHEDULED: <2015-04-01 Wed>
+
+* Project B
+
+** INPROGRESS Prepare class diagrams
+   SCHEDULED: <2015-03-30 Mon>
+   DEADLINE: <2015-04-01 Wed>
+
+
+*** DONE Employee
+   CLOCK: [2015-03-30 Mon 08:00]--[2015-03-30 Mon 08:25] =>  0:25
+   CLOCK: [2015-03-30 Mon 08:30]--[2015-03-30 Mon 08:50] =>  0:20
+
+*** DONE Department
+    CLOCK: [2015-03-30 Mon 9:00]--[2015-03-30 Mon 11:40] =>  2:40
+
+*** DONE Order
+    CLOCK: [2015-03-30 Mon 9:00]--[2015-03-30 Mon 11:40] =>  2:40
+
+*** TODO Article
+   
+** TODO Prepare benchmarks report
+   SCHEDULED: <2015-04-02 Thu>
+   DEADLINE: <2015-04-03 Fri> 
+
+** TODO Evalute GSON library
+   SCHEDULED: <2015-04-03 Fri>
+
+** TODO Fix mappings for tables: "Articles" and "Comments"
+   SCHEDULED: <2015-04-01 Wed>
+
+** TODO Configure Gerrit account				      :setup:
+   SCHEDULED: <2015-03-31 Tue>
+
+** TODO Update configuration files
+   SCHEDULED: <2015-04-02 Thu>
+
+** TODO Set default log level to INFO
+   SCHEDULED: <2015-04-03 Fri>
